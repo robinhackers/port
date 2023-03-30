@@ -32,30 +32,30 @@
             height: 52%;
         }
 		  .containerbackground {
-			padding-top: 3%;
-			font-family: Dosis;
-            margin: 3rem;
+			padding: 6% 3% 3% 3%;
+			display:inline-block;
+			 width: xpx;
+			margin: 0 auto;
 			align-items: center;
-			position: absolute;
             justify-content: center;
+			font-family: Dosis;
+			position: absolute;
 			font-size: 24vw;
-            top: 0;
-            left: 0;
-            bottom: 0;
+
             z-index: -1;
             color: red;
-			opacity: 0.05;
+			opacity: 0.07;
         }
         .square {
 
-            opacity: 0.5;
+            opacity: 0.5 ;
             transition: opacity 0.3s;
             width: 100%;
             height: 100%;
         }
 
         .square:hover {
-            opacity: 1;
+            opacity: 1 ;
         }
 		.Title {
 		padding-top: 4%;
@@ -273,27 +273,60 @@ body {
 	function pname(doit) {
     document.getElementsByTagName('h1')[0].innerText = doit;
 }
+	function efect(p=0){
+	if (document.getElementById('robin').style.opacity=="0.3") {document.getElementById('robin').style.opacity="0.07"}else{
+		if (p===0){
+			document.getElementById('robin').style.zIndex="99";
+			document.getElementById('robin').style.opacity="0.6";
+			rhack();
+			
+		}else if(p===1){
+			document.getElementById('robin').style.zIndex="-1";
+			document.getElementById('robin').style.opacity="0.25";
+			for(let i=1;i<8;i++){document.getElementById(i).style.setProperty("opacity","1","important")}
+			setTimeout(efect, 1000, 2);
+		}else{
+			for(let i=1;i<8;i++){document.getElementById(i).style.setProperty("opacity","","")}
+			document.getElementById('robin').style.opacity="0.3";
+		}
+	}
+	}
+	function rhack(text="",i=0){
+		document.getElementsByTagName("a")[0].innerText= text;
+		const arrtext=["   < >   "," <     > "," < .   > "," < ..  > "," < ... > ", '< ("#") >','< R"#") >','< RO#") >','< ROB") >','< ROBI) >','< ROBIN >'];
+			i++
+				if (i===3){for(let i=1;i<5;i++){document.getElementById(i).style.setProperty("opacity","1","important")}}
+				else if(i===6){for(let i=4;i<8;i++){document.getElementById(i).style.setProperty("opacity","1","important")}}
+				else if(i===9){for(let i=1;i<8;i++){document.getElementById(i).style.setProperty("opacity","1","important")};document.getElementById("4").style.setProperty("opacity","0.5","important")}
+				else{for(let i=1;i<8;i++){document.getElementById(i).style.setProperty("opacity","","")}}
+				if (i===11){
+				setTimeout(efect, 1000, 1)
+				}else{setTimeout(rhack, 300, arrtext[i],i);if (document.getElementsByTagName("a")[0].innerText=='< ROBIN >'){return}}
+
+	}
 	</script>
 </head>
 <body>
 
-    <div class="container">
-		<div class="containerbackground">
-            <a>&lt; ROBIN &gt;</a>
+<div id="robin" class="containerbackground" style="white-space:nowrap">
+            <center><a>&lt; ROBIN &gt;</a></center>
         </div>
-        <div id=1 class="square" style="grid-row: 1; grid-column: 1;" onmouseover="pname('UpToTel')" onmouseout="pname('RobinHackers Windows Apps')"><a href="#AutoData" ><img src="https://nsm09.casimages.com/img/2023/03/29//23032904283326129818147710.png" style=" width: 100%; height: 100%; transform: scale(1.1);background-size: cover; background-position: center;"></a></div>
+		
+    <div class="container"  onclick="efect()">
+		
+        <div id=1 class="square" style="grid-row: 1; grid-column: 1;" onmouseover="pname('UpToTel')" onmouseout="pname('RobinHackers Windows Apps')"><a href="#UpToTel" ><img src="https://nsm09.casimages.com/img/2023/03/29//23032904283326129818147710.png" style=" width: 100%; height: 100%; transform: scale(1.1);background-size: cover; background-position: center;"></a></div>
 
         <div id=2 class="square" style="grid-row: 2; grid-column: 1;" onmouseover="pname('AutoData')" onmouseout="pname('RobinHackers Windows Apps')"><a href="#AutoData"><img src="https://nsm09.casimages.com/img/2023/03/27//23032710430926129818146438.png" style=" width: 100%; height: 100%; transform: scale(1.1);background-size: cover; background-position: center;"></a></div>
 
-        <div id=3 class="square" style="grid-row: 3; grid-column: 1;" onmouseover="pname('DemLine Capture')" onmouseout="pname('RobinHackers Windows Apps')"><a href="#AutoData"><img src="https://nsm09.casimages.com/img/2023/03/29//23032904283426129818147713.png" style=" width: 100%; height: 100%; transform: scale(1.1);background-size: cover; background-position: center;"></a></div>
+        <div id=3 class="square" style="grid-row: 3; grid-column: 1;" onmouseover="pname('DemLine Capture')" onmouseout="pname('RobinHackers Windows Apps')"><a href="#DemLine"><img src="https://nsm09.casimages.com/img/2023/03/29//23032910032026129818147909.png" style=" width: 100%; height: 100%; transform: scale(1.1);background-size: cover; background-position: center;"></a></div>
 	
         <div id=4 class="square" style="grid-row: 2; grid-column: 2;" onmouseover="pname('Worldown')" onmouseout="pname('RobinHackers Windows Apps')"><a href="#Worldown"><img src="https://nsm09.casimages.com/img/2023/03/28//23032805131126129818147002.png" style=" width: 100%; height: 100%; transform: scale(1.1);background-size: cover; background-position: center;"></a></div>
 
-        <div id=5 class="square" style="grid-row: 1; grid-column: 3;" onmouseover="pname('VideoDecryptor')" onmouseout="pname('RobinHackers Windows Apps')"><a href="#AutoData"><img src="https://nsm09.casimages.com/img/2023/03/29//23032904283426129818147712.png" style=" width: 100%; height: 100%; transform: scale(1.1);background-size: cover; background-position: center;"></a></div>
+        <div id=5 class="square" style="grid-row: 1; grid-column: 3;" onmouseover="pname('VideoDecryptor')" onmouseout="pname('RobinHackers Windows Apps')"><a href="#VideoDecryptor"><img src="https://nsm09.casimages.com/img/2023/03/29//23032904283426129818147712.png" style=" width: 100%; height: 100%; transform: scale(1.1);background-size: cover; background-position: center;"></a></div>
 	
         <div id=6 class="square" style="grid-row: 2; grid-column: 3;" onmouseover="pname('Kacakademi')" onmouseout="pname('RobinHackers Windows Apps')"><a href="#Kacakademi"><img src="https://nsm09.casimages.com/img/2023/03/29//23032905195026129818147755.png" style=" width: 100%; height: 100%; transform: scale(1.1);background-size: cover; background-position: center;"></a></div>
 	
-        <div id=7 class="square" style="grid-row: 3; grid-column: 3;" onmouseover="pname('DrPatPat')" onmouseout="pname('RobinHackers Windows Apps')"><a href="#AutoData"><img src="https://nsm09.casimages.com/img/2023/03/29//23032905014226129818147751.png" style=" width: 100%; height: 100%; transform: scale(1.1);background-size: cover; background-position: center;"></a></div>
+        <div id=7 class="square" style="grid-row: 3; grid-column: 3;" onmouseover="pname('DrPatPat')" onmouseout="pname('RobinHackers Windows Apps')"><a href="#DrPatPat"><img src="https://nsm09.casimages.com/img/2023/03/29//23032909225226129818147883.png" style=" width: 100%; height: 100%; transform: scale(1.1);background-size: cover; background-position: center;"></a></div>
 		
     </div>
 	<div class="Title">
@@ -303,14 +336,15 @@ body {
    <i class="fa fa-angle-down animated bounce"></i>
 </div></div>
 <div class="section animate">
-   <div class="middle">
+   <div id="AutoData" class="middle">
       <img src="https://nsm09.casimages.com/img/2023/03/27//23032710430926129818146438.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
    </div>
    <div class="left title">
-      <div id="AutoData" class="content">
+      <div class="content">
          <h2>AutoData</h2>
-         <p>Wow. What a wonderful image. And look! there are even more images on the right side. Amazing. If you click below, I bet you'll get teleported to a magical land.</p>
-         <a href="#" class="btn-primary">Learn more</a>
+         <p>ŞUTDATA OTOMATİK VİDEO İNDİRME ARACI<br>Şutdata Online Eğitim belgelerini hızlı, güvenli ve tasnifli bir biçimde indirmenizi sağlar.</p>
+         <a href="https://tus.robinhackers.workers.dev/0:/AutoData/" target="_blank" class="btn-primary">İndirin</a>
+		 <p>- Özel -</p>
       </div>
    </div>
    <div class="right tiles">
@@ -322,39 +356,80 @@ body {
 </div>
 
 <div class="section">
-   <div class="middle">
+   <div id="Worldown" class="middle">
       <img src="https://nsm09.casimages.com/img/2023/03/28//23032805131126129818147002.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
    </div>
    <div class="right title">
-      <div id="Worldown" class="content">
+      <div class="content">
          <h2>Worldown</h2>
-         <p>What an interesting looking person! I wonder if they've ever climbed Mount Everest, or seen the Egyptian Pyramids. If not, I hope that one day they get to. You go random stock image person! Follow your dreams!</p> <a href="#" class="btn-primary">Learn more</a>
+         <p>ŞUTWORLD ŞUTTIME ŞUTMER DOKÜMAN İNDİRİCİ<br>Tüm içerikleri hızlı ve tasnifli biçimde indirmenizi sağlar.</p> <a href="https://tus.robinhackers.workers.dev/0:/Worldown/" target="_blank" class="btn-primary">İndirin</a>
+		 <p>- Özel -</p>
       </div>
    </div>
    
    <div class="left tiles">
-      <img src="https://nsm09.casimages.com/img/2023/03/28//23032805322526129818147012.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-      <img src="https://images.unsplash.com/photo-1464655646192-3cb2ace7a67e?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-      <img src="https://images.unsplash.com/photo-1464655646192-3cb2ace7a67e?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-      <img src="https://images.unsplash.com/photo-1464655646192-3cb2ace7a67e?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+      <img src="https://nsm09.casimages.com/img/2023/03/29//23032911362426129818147981.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+	        <img src="https://nsm09.casimages.com/img/2023/03/29//23032911334026129818147979.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />	        
+
+
    </div>
    
 </div>
 
 <div class="section">
-   <div class="middle">
+   <div id="Kacakademi" class="middle">
       <img src="https://nsm09.casimages.com/img/2023/03/29//23032905195026129818147755.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
    </div>
    <div class="left title">
-      <div id="Kacakademi" class="content">
+      <div class="content">
          <h2>Kacakademi</h2>
-         <p>I once thought about becoming an architect. I wanted to create a house fit for a king. But then I failed maths. So I became a frontend developer instead.</p>
+         <p>PITAKADEMİSİ, ŞUTEV VİDEO DRM ÇÖZÜCÜ VE İNDİRİCİ<br>Online Eğitim paketlerini seri, tasnifli ve güvenli biçimde indirmenizi sağlar.</p><a href="https://tus.robinhackers.workers.dev/0:/Kacakademi/" target="_blank" class="btn-primary">İndirin</a>
+		 <p>- Özel -</p>
       </div>
    </div>
    
    <div class="right tiles">
-      <img src="https://images.unsplash.com/photo-1465326117523-6450112b60b2?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-      <img src="https://images.unsplash.com/photo-1465326117523-6450112b60b2?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+      <img src="https://nsm09.casimages.com/img/2023/03/30//23033008451626129818148054.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+      <img src="https://nsm09.casimages.com/img/2023/03/30//23033008451626129818148057.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+
+   </div>
+   
+</div>
+
+<div id="test" class="section">
+   <div id="UpToTel" class="middle">
+      <img src="https://nsm09.casimages.com/img/2023/03/29//23032904283326129818147710.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+   </div>
+   <div class="right title">
+      <div class="content">
+         <h2>UpToTel</h2>
+         <p>TELEGRAM TOPLU İÇERİK YÜKLEME ARACI<br>Telegram’a klasör olarak dosya yükleme olanağı tanır ve bir içerik dizini oluşturur.</p><a href="https://tus.robinhackers.workers.dev/1:/Uptotel/" target="_blank" class="btn-primary">İndirin</a>
+      </div>
+   </div>
+   
+   <div class="left tiles">
+      <img src="https://nsm09.casimages.com/img/2023/03/30//23033010151026129818148122.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+	  
+      <img src="https://nsm09.casimages.com/img/2023/03/30//23033009545926129818148113.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+	   <img src="https://nsm09.casimages.com/img/2023/03/30//23033009545826129818148110.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+     
+   </div>
+   
+</div>
+<div class="section">
+   <div id="VideoDecryptor" class="middle">
+      <img src="https://nsm09.casimages.com/img/2023/03/29//23032904283426129818147712.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+   </div>
+   <div class="left title">
+      <div class="content">
+         <h2>VideoDecryptor</h2>
+         <p>VIDEO ENCRYPTOR<BR>Windows üzerinden openssl ve hex editor kullanarak video dosyalarının şifrelenmesini sağlar.<BR>VIDEO DECRYPTOR<BR>Video Encryptor ile şifrelenmiş video dosyalarını oynatma aracıdır.</p><a href="https://tus.robinhackers.workers.dev/1:/Video%20En&De%20Cryptor/" target="_blank" class="btn-primary">İndirin</a>
+      </div>
+   </div>
+   
+   <div class="right tiles">
+      <img src="https://nsm09.casimages.com/img/2023/03/30//23033003501426129818148238.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+      <img src="https://nsm09.casimages.com/img/2023/03/30//23033003501426129818148237.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
       <img src="https://images.unsplash.com/photo-1465326117523-6450112b60b2?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
       <img src="https://images.unsplash.com/photo-1465326117523-6450112b60b2?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
    </div>
@@ -362,21 +437,43 @@ body {
 </div>
 
 <div id="test" class="section">
-   <div class="middle">
-      <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+   <div id="DemLine" class="middle">
+      <img src="https://nsm09.casimages.com/img/2023/03/29//23032910032026129818147909.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
    </div>
    <div class="right title">
       <div class="content">
-         <h2>The future is now.</h2>
-         <p>Check out that technology! Imagine if we went back in time and put one of those in the hands of a neanderthal. Do you think they'd be impressed, or just try to club us to death?</p>
+         <h2>DemLine Capture</h2>
+         <p>ŞUTMEDLINE OTOMATIK DERS TARAMA ARACI<br>Dersler arasında geçiş yaparak toplu indirme işlemine yardımcı olan bir firefox eklentisidir.</p><a href="https://tus.robinhackers.workers.dev/0:/DemLine%20Capture/" target="_blank" class="btn-primary">İndirin</a>
+		 <p>- Özel -</p>
       </div>
    </div>
    
    <div class="left tiles">
-      <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-      <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-      <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-      <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+            <img src="https://nsm09.casimages.com/img/2023/03/30//23033005005826129818148341.png?dpr=2&auto=format&crop=entropy&fit=crop" />
+	  <img src="https://nsm09.casimages.com/img/2023/03/30//23033004355526129818148302.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+		<img src="https://nsm09.casimages.com/img/2023/03/30//23033004355526129818148301.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+<img src="https://nsm09.casimages.com/img/2023/03/30//23033005210626129818148361.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+   </div>
+   
+</div>
+<div class="section">
+   <div id="DrPatPat" class="middle">
+      <img src="https://nsm09.casimages.com/img/2023/03/29//23032909225226129818147883.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+   </div>
+   <div class="left title">
+      <div class="content">
+         <h2>DrPatPat</h2>
+         <p>DERETAPOLOJİ OTOMATİK VİDEO İNDİRİCİ<br>Eğitim paketlerini seri biçimde indirmenizi sağlar.</p><a href="https://tus.robinhackers.workers.dev/0:/DrPatPat/" target="_blank" class="btn-primary">İndirin</a>
+		 <p>- Özel -</p>
+      </div>
+   </div>
+   
+   <div class="right tiles">
+      <img src="https://nsm09.casimages.com/img/2023/03/30//23033005512726129818148371.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+      <img src="https://nsm09.casimages.com/img/2023/03/30//23033005331426129818148363.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+	  <img src="https://nsm09.casimages.com/img/2023/03/30//23033005492726129818148369.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+<img src="https://nsm09.casimages.com/img/2023/03/30//23033005404326129818148366.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+
    </div>
    
 </div>
@@ -384,6 +481,7 @@ body {
    <a href="#top" class="scrollTo"><i class="fa fa-angle-up animated bounce"></i></a>
    <h1>Scroll Up</h1>
 </div>
+<center><div><a href="mailto:robintus@mail.com">Contact<a></div></center>
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
 
     <script>
