@@ -4,279 +4,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
-  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
+	<title>RobinHackers</title>
+	<link rel="icon" type="image/x-icon" href="https://nsm09.casimages.com/img/2023/03/30//23033010162626129818148635.png">
     <style>
-    body {
-
-            background-color: black;
-
-            
-        }
-
-        .container {
-		            margin: 0;
-            display: flex;
-			padding-top: 2%;
-			padding-left: 31%;
-			align-items: center;
-            justify-content: center;
-            height: 100vh;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr) 1fr;
-            grid-template-rows: repeat(3, 1fr);
-            gap: 3%;
-            width: 52%;
-            height: 52%;
-        }
-		  .containerbackground {
-			padding: 6% 3% 3% 3%;
-			display:inline-block;
-			 width: xpx;
-			margin: 0 auto;
-			align-items: center;
-            justify-content: center;
-			font-family: Dosis;
-			position: absolute;
-			font-size: 24vw;
-
-            z-index: -1;
-            color: red;
-			opacity: 0.07;
-        }
-        .square {
-
-            opacity: 0.5 ;
-            transition: opacity 0.3s;
-            width: 100%;
-            height: 100%;
-        }
-
-        .square:hover {
-            opacity: 1 ;
-        }
-		.Title {
+	
+	body {
+		background-color: black;
+		font-family: 'Roboto', sans-serif;
+	}
+	.container {
+		margin: 0;
+		display: flex;
+		padding-top: 2%;
+		padding-left: 31%;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr) 1fr;
+		grid-template-rows: repeat(3, 1fr);
+		gap: 3%;
+		width: 52%;
+		height: 52%;
+	}
+	  .containerbackground {
+		padding: 6% 3% 3% 3%;
+		font-family: Dosis;
+		position: absolute;
+		font-size: 24vw;
+		z-index: -1;
+		color: red;
+		opacity: 0.07;
+	}
+	.square {
+		opacity: 0.5 ;
+		transition: opacity 0.3s;
+		width: 100%;
+		height: 100%;
+	}
+	.square:hover {
+		opacity: 1 ;
+	}
+	.Title {
 		padding-top: 4%;
 		justify-content: center;
 		align-items: center;
 		bottom: 0;
-  left: 0;
+		left: 0;
+	}
+	
+	@import url(https://fonts.googleapis.com/css?family=Roboto:300,900);
+	@import url(https://fonts.googleapis.com/css?family=Dosis:700);
+
+	.header, .footer {
+		background: #2e2e2e;
+		color: #fff;
+		padding: 1%;
+		text-align: center;
+	}
+	.header a, .footer a {
+		color: #fff;
+	}
+
+	.header h1, .footer h1 {
+		font-size: 3em;
+		font-weight: 300;
+	}
+	.header i.fa, .footer i.fa {
+		font-size: 4em;
+	}
+	.header .bounce, .footer .bounce {
+		-webkit-animation-name: bounce;
+		animation-name: bounce;
+		-webkit-transform-origin: center bottom;
+		transform-origin: center bottom;
+		animation-iteration-count: infinite;
+		-webkit-animation-iteration-count: infinite;
+	}
+	.header .animated, .footer .animated {
+		-webkit-animation-duration: 2s;
+		animation-duration: 2s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+	}
+
+	.section {
+		width: 100%;
+		position: relative;
+	}
+	.section .left, .section .middle, .section .right {
+		width: 100%;
+		display: block;
+		color: #fff;
+		box-sizing: border-box;
+		left: 0;
+		padding: 30px;
+		text-align: center;
+		overflow: hidden;
+		-moz-transition: 0.3s ease-in-out all;
+		-o-transition: 0.3s ease-in-out all;
+		-webkit-transition: 0.3s ease-in-out all;
+		transition: 0.3s ease-in-out all;
+	}
+	@media (min-width: 480px) {
+		.section .left .content, .section .middle .content, .section .right .content {
+			position: relative;
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
 		}
-		
-		 @import url(https://fonts.googleapis.com/css?family=Roboto:300,900);
-@import url(https://fonts.googleapis.com/css?family=Dosis:700);
+	}
+	@media (min-width: 480px) {
+	   .section .left, .section .middle, .section .right {
+			width: 50%;
+			font-size: 0.9em;
+			padding: 10px;
+			left: 0;
+			float: left;
+			position: absolute;
+	    }
+	}
+	@media (min-width: 768px) {
+	   .section .left, .section .middle, .section .right {
+			width: 33.33333%;
+			left: 33.33%;
+			padding: 10px;
+	    }
+	}
+	@media (min-width: 992px) {
+		.section .left, .section .middle, .section .right {
+			padding: 30px;
+			font-size: 1em;
+	    }
+	}
+	.section.animate .left {
+		left: 0;
+	}
+	@media (min-width: 480px) {
+		.section.animate .left {
+			left: 50%;
+	    }
+	}
+	@media (min-width: 768px) {
+	    .section.animate .left {
+			left: 0;
+	    }
+	}
+	.section.animate .right {
+		left: 0;
+	}
+	@media (min-width: 480px) {
+	  .section.animate .right {
+		left: 50%;
+	  }
+	}
+	@media (min-width: 768px) {
+	    .section.animate .right {
+			left: 66.66%;
+	    }
+	}
+	.section .title {
+		background: tomato;
+	}
+	.section .title h2 {
+		margin-top: 0;
+	}
+	.section .title p {
+		line-height: 1.55em;
+		margin-bottom: 0.75em;
+	}
+	.section .title .btn-primary {
+		color: #fff;
+		background: #ff3814;
+		padding: 10px;
+		text-decoration: none;
+		border-radius: 3px;
+		display: inline-block;
+		-moz-transition: 0.3s ease-in-out all;
+		-o-transition: 0.3s ease-in-out all;
+		-webkit-transition: 0.3s ease-in-out all;
+		transition: 0.3s ease-in-out all;
+	}
+	.section .title .btn-primary:hover {
+		background: #fa2600;
+	}
+	.section .tiles {
+		padding: 0;
+		background: #fff;
+		clear: both;
+		display: none;
+		float: none;
+	}
+	.section .tiles img {
+		width: 50%;
+		float: left;
+		height: auto;
+		opacity: 0.7;
+		-moz-transition: 0.3s ease-in-out all;
+		-o-transition: 0.3s ease-in-out all;
+		-webkit-transition: 0.3s ease-in-out all;
+		transition: 0.3s ease-in-out all;
+		-webkit-filter: grayscale(100%);
+		-moz-filter: grayscale(100%);
+		-o-filter: grayscale(100%);
+	}
+	.section .tiles img:hover {
+		opacity: 1;
+		-webkit-filter: grayscale(0%);
+		-moz-filter: grayscale(0%);
+		-o-filter: grayscale(0%);
+	}
+	@media (min-width: 768px) {
+		.section .tiles {
+			display: block;
+	    }
+	}
+	.section .middle {
+		background: slategray;
+		z-index: 2;
+		padding: 0;
+	}
+	.section .middle img {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
 
-body {
-  font-family: 'Roboto', sans-serif;
-}
-
-.header, .footer {
-  background: #2e2e2e;
-  color: #fff;
-  padding: 1%;
-  text-align: center;
-}
-.header a, .footer a {
-  color: #fff;
-}
-
-.header h1, .footer h1 {
-  font-size: 3em;
-  font-weight: 300;
-}
-.header i.fa, .footer i.fa {
-  font-size: 4em;
-}
-.header .bounce, .footer .bounce {
-  -webkit-animation-name: bounce;
-  animation-name: bounce;
-  -webkit-transform-origin: center bottom;
-  transform-origin: center bottom;
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-}
-.header .animated, .footer .animated {
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-.section {
-  width: 100%;
-  position: relative;
-}
-.section .left, .section .middle, .section .right {
-  width: 100%;
-  display: block;
-  color: #fff;
-  box-sizing: border-box;
-  left: 0;
-  padding: 30px;
-  text-align: center;
-  overflow: hidden;
-  -moz-transition: 0.3s ease-in-out all;
-  -o-transition: 0.3s ease-in-out all;
-  -webkit-transition: 0.3s ease-in-out all;
-  transition: 0.3s ease-in-out all;
-}
-@media (min-width: 480px) {
-  .section .left .content, .section .middle .content, .section .right .content {
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
-}
-@media (min-width: 480px) {
-  .section .left, .section .middle, .section .right {
-    width: 50%;
-    font-size: 0.9em;
-    padding: 10px;
-    left: 0;
-    float: left;
-    position: absolute;
-  }
-}
-@media (min-width: 768px) {
-  .section .left, .section .middle, .section .right {
-    width: 33.33333%;
-    left: 33.33%;
-    padding: 10px;
-  }
-}
-@media (min-width: 992px) {
-  .section .left, .section .middle, .section .right {
-    padding: 30px;
-    font-size: 1em;
-  }
-}
-.section.animate .left {
-  left: 0;
-}
-@media (min-width: 480px) {
-  .section.animate .left {
-    left: 50%;
-  }
-}
-@media (min-width: 768px) {
-  .section.animate .left {
-    left: 0;
-  }
-}
-.section.animate .right {
-  left: 0;
-}
-@media (min-width: 480px) {
-  .section.animate .right {
-    left: 50%;
-  }
-}
-@media (min-width: 768px) {
-  .section.animate .right {
-    left: 66.66%;
-  }
-}
-.section .title {
-  background: tomato;
-}
-.section .title h2 {
-  margin-top: 0;
-}
-.section .title p {
-  line-height: 1.55em;
-  margin-bottom: 0.75em;
-}
-.section .title .btn-primary {
-  color: #fff;
-  background: #ff3814;
-  padding: 10px;
-  text-decoration: none;
-  border-radius: 3px;
-  display: inline-block;
-  -moz-transition: 0.3s ease-in-out all;
-  -o-transition: 0.3s ease-in-out all;
-  -webkit-transition: 0.3s ease-in-out all;
-  transition: 0.3s ease-in-out all;
-}
-.section .title .btn-primary:hover {
-  background: #fa2600;
-}
-.section .tiles {
-  padding: 0;
-  background: #fff;
-  clear: both;
-  display: none;
-  float: none;
-}
-.section .tiles img {
-  width: 50%;
-  float: left;
-  height: auto;
-  opacity: 0.7;
-  -moz-transition: 0.3s ease-in-out all;
-  -o-transition: 0.3s ease-in-out all;
-  -webkit-transition: 0.3s ease-in-out all;
-  transition: 0.3s ease-in-out all;
-  -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
-  -o-filter: grayscale(100%);
-}
-.section .tiles img:hover {
-  opacity: 1;
-  -webkit-filter: grayscale(0%);
-  -moz-filter: grayscale(0%);
-  -o-filter: grayscale(0%);
-}
-@media (min-width: 768px) {
-  .section .tiles {
-    display: block;
-  }
-}
-.section .middle {
-  background: slategray;
-  z-index: 2;
-  padding: 0;
-}
-.section .middle img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-@-webkit-keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    -webkit-transform: translateY(0);
-  }
-  40% {
-    -webkit-transform: translateY(-20px);
-  }
-  60% {
-    -webkit-transform: translateY(-10px);
-  }
-}
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-20px);
-  }
-  60% {
-    transform: translateY(-10px);
-  }
-}
+	@-webkit-keyframes bounce {
+		0%, 20%, 50%, 80%, 100% {
+			-webkit-transform: translateY(0);
+		}
+		40% {
+			-webkit-transform: translateY(-20px);
+		}
+		60% {
+			-webkit-transform: translateY(-10px);
+		}
+	}
+	@keyframes bounce {
+		0%, 20%, 50%, 80%, 100% {
+			transform: translateY(0);
+		}
+		40% {
+			transform: translateY(-20px);
+		}
+		60% {
+			transform: translateY(-10px);
+		}
+	}
 
     </style>
+	
 	<script>
-var link = document.createElement('link');
-link.setAttribute('rel', 'stylesheet');
-link.setAttribute('type', 'text/css');
-link.setAttribute('href', 'https://fonts.googleapis.com/css?family=Dosis:700');
-document.head.appendChild(link);
+	var link = document.createElement('link');
+	link.setAttribute('rel', 'stylesheet');
+	link.setAttribute('type', 'text/css');
+	link.setAttribute('href', 'https://fonts.googleapis.com/css?family=Dosis:700');
+	document.head.appendChild(link);
 
 	function pname(doit) {
     document.getElementsByTagName('h1')[0].innerText = doit;
@@ -302,23 +289,24 @@ document.head.appendChild(link);
 	function rhack(text="",i=0){
 		document.getElementsByTagName("a")[0].innerText= text;
 		const arrtext=["   < >   "," <     > "," < .   > "," < ..  > "," < ... > ", '< ("#") >','< R"#") >','< RO#") >','< ROB") >','< ROBI) >','< ROBIN >'];
-			i++
-				if (i===3){for(let i=1;i<5;i++){document.getElementById(i).style.setProperty("opacity","1","important")}}
-				else if(i===6){for(let i=4;i<8;i++){document.getElementById(i).style.setProperty("opacity","1","important")}}
-				else if(i===9){for(let i=1;i<8;i++){document.getElementById(i).style.setProperty("opacity","1","important")};document.getElementById("4").style.setProperty("opacity","0.5","important")}
-				else{for(let i=1;i<8;i++){document.getElementById(i).style.setProperty("opacity","","")}}
-				if (i===11){
-				setTimeout(efect, 1000, 1)
-				}else{setTimeout(rhack, 300, arrtext[i],i);if (document.getElementsByTagName("a")[0].innerText=='< ROBIN >'){return}}
+		i++
+		
+		if (i===3){for(let i=1;i<5;i++){document.getElementById(i).style.setProperty("opacity","1","important")}}
+		else if(i===6){for(let i=4;i<8;i++){document.getElementById(i).style.setProperty("opacity","1","important")}}
+		else if(i===9){for(let i=1;i<8;i++){document.getElementById(i).style.setProperty("opacity","1","important")};document.getElementById("4").style.setProperty("opacity","0.5","important")}
+		else{for(let i=1;i<8;i++){document.getElementById(i).style.setProperty("opacity","","")}}
+		if (i===11){
+		setTimeout(efect, 1000, 1)
+		}else{setTimeout(rhack, 300, arrtext[i],i);if (document.getElementsByTagName("a")[0].innerText=='< ROBIN >'){return}}
 
 	}
 	</script>
 </head>
 <body>
 
-<div id="robin" class="containerbackground" style="white-space:nowrap">
-            <center><a>&lt; ROBIN &gt;</a></center>
-        </div>
+	<div id="robin" class="containerbackground" style="white-space:nowrap">
+        <center><a>&lt; ROBIN &gt;</a></center>
+    </div>
 		
     <div class="container"  onclick="efect()">
 		
@@ -338,218 +326,215 @@ document.head.appendChild(link);
 		
     </div>
 	<div class="Title">
+		<div class="header" id="top">
+			<h1>RobinHackers Windows Apps</h1>
+			<i class="fa fa-angle-down animated bounce"></i>
+		</div>
+	</div>
+	<div class="section animate">
+		<div id="AutoData" class="middle">
+			<img src="https://nsm09.casimages.com/img/2023/03/27//23032710430926129818146438.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+		</div>
+		<div class="left title">
+			<div class="content">
+				<h2>AutoData</h2>
+				<p>ŞUTDATA OTOMATİK VİDEO İNDİRME ARACI<br>Şutdata Online Eğitim belgelerini hızlı, güvenli ve tasnifli bir biçimde indirmenizi sağlar.</p>
+				<a href="https://tus.robinhackers.workers.dev/0:/AutoData/" target="_blank" class="btn-primary">İndirin</a>
+				<p>- Özel -</p>
+			</div>
+		</div>
+		<div class="right tiles">
+			<img src="https://nsm09.casimages.com/img/2023/03/28//23032805054426129818146986.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+			<img src="https://nsm09.casimages.com/img/2023/03/28//23032804570726129818146976.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+			<img src="https://nsm09.casimages.com/img/2023/03/28//23032805020926129818146984.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+			<img src="https://nsm09.casimages.com/img/2023/03/28//23032805020926129818146985.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+	   </div>
+	</div>
 
-  <div class="header" id="top">
-   <h1>RobinHackers Windows Apps</h1>
-   <i class="fa fa-angle-down animated bounce"></i>
-</div></div>
-<div class="section animate">
-   <div id="AutoData" class="middle">
-      <img src="https://nsm09.casimages.com/img/2023/03/27//23032710430926129818146438.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-   </div>
-   <div class="left title">
-      <div class="content">
-         <h2>AutoData</h2>
-         <p>ŞUTDATA OTOMATİK VİDEO İNDİRME ARACI<br>Şutdata Online Eğitim belgelerini hızlı, güvenli ve tasnifli bir biçimde indirmenizi sağlar.</p>
-         <a href="https://tus.robinhackers.workers.dev/0:/AutoData/" target="_blank" class="btn-primary">İndirin</a>
-		 <p>- Özel -</p>
-      </div>
-   </div>
-   <div class="right tiles">
-      <img src="https://nsm09.casimages.com/img/2023/03/28//23032805054426129818146986.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-      <img src="https://nsm09.casimages.com/img/2023/03/28//23032804570726129818146976.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-      <img src="https://nsm09.casimages.com/img/2023/03/28//23032805020926129818146984.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-      <img src="https://nsm09.casimages.com/img/2023/03/28//23032805020926129818146985.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-   </div>
-</div>
-
-<div class="section">
-   <div id="Worldown" class="middle">
-      <img src="https://nsm09.casimages.com/img/2023/03/28//23032805131126129818147002.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-   </div>
-   <div class="right title">
-      <div class="content">
-         <h2>Worldown</h2>
-         <p>ŞUTWORLD ŞUTTIME ŞUTMER DOKÜMAN İNDİRİCİ<br>Tüm içerikleri hızlı ve tasnifli biçimde indirmenizi sağlar.</p> <a href="https://tus.robinhackers.workers.dev/0:/Worldown/" target="_blank" class="btn-primary">İndirin</a>
-		 <p>- Özel -</p>
-      </div>
-   </div>
-   
-   <div class="left tiles">
-      <img src="https://nsm09.casimages.com/img/2023/03/29//23032911362426129818147981.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+	<div class="section">
+		<div id="Worldown" class="middle">
+			<img src="https://nsm09.casimages.com/img/2023/03/28//23032805131126129818147002.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+		</div>
+		<div class="right title">
+			<div class="content">
+				 <h2>Worldown</h2>
+				 <p>ŞUTWORLD ŞUTTIME ŞUTMER DOKÜMAN İNDİRİCİ<br>Tüm içerikleri hızlı ve tasnifli biçimde indirmenizi sağlar.</p> <a href="https://tus.robinhackers.workers.dev/0:/Worldown/" target="_blank" class="btn-primary">İndirin</a>
+				 <p>- Özel -</p>
+		    </div>
+	    </div>
+		<div class="left tiles">
+			<img src="https://nsm09.casimages.com/img/2023/03/29//23032911362426129818147981.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
 	        <img src="https://nsm09.casimages.com/img/2023/03/29//23032911334026129818147979.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />	        
 
+		</div>
+	</div>
 
-   </div>
-   
-</div>
+	<div class="section">
+	   <div id="Kacakademi" class="middle">
+		  <img src="https://nsm09.casimages.com/img/2023/03/29//23032905195026129818147755.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+	   </div>
+	   <div class="left title">
+		  <div class="content">
+			 <h2>Kacakademi</h2>
+			 <p>PITAKADEMİSİ, ŞUTEV VİDEO DRM ÇÖZÜCÜ VE İNDİRİCİ<br>Online Eğitim paketlerini seri, tasnifli ve güvenli biçimde indirmenizi sağlar.</p><a href="https://tus.robinhackers.workers.dev/0:/Kacakademi/" target="_blank" class="btn-primary">İndirin</a>
+			 <p>- Özel -</p>
+		  </div>
+	   </div>
+	   
+	   <div class="right tiles">
+		  <img src="https://nsm09.casimages.com/img/2023/03/30//23033008451626129818148054.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+		  <img src="https://nsm09.casimages.com/img/2023/03/30//23033008451626129818148057.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+	   </div>
+	   
+	</div>
 
-<div class="section">
-   <div id="Kacakademi" class="middle">
-      <img src="https://nsm09.casimages.com/img/2023/03/29//23032905195026129818147755.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-   </div>
-   <div class="left title">
-      <div class="content">
-         <h2>Kacakademi</h2>
-         <p>PITAKADEMİSİ, ŞUTEV VİDEO DRM ÇÖZÜCÜ VE İNDİRİCİ<br>Online Eğitim paketlerini seri, tasnifli ve güvenli biçimde indirmenizi sağlar.</p><a href="https://tus.robinhackers.workers.dev/0:/Kacakademi/" target="_blank" class="btn-primary">İndirin</a>
-		 <p>- Özel -</p>
-      </div>
-   </div>
-   
-   <div class="right tiles">
-      <img src="https://nsm09.casimages.com/img/2023/03/30//23033008451626129818148054.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-      <img src="https://nsm09.casimages.com/img/2023/03/30//23033008451626129818148057.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+	<div id="test" class="section">
+	   <div id="UpToTel" class="middle">
+		  <img src="https://nsm09.casimages.com/img/2023/03/29//23032904283326129818147710.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+	   </div>
+	   <div class="right title">
+		  <div class="content">
+			 <h2>UpToTel</h2>
+			 <p>TELEGRAM TOPLU İÇERİK YÜKLEME ARACI<br>Telegram’a klasör olarak dosya yükleme olanağı tanır ve bir içerik dizini oluşturur.</p><a href="https://tus.robinhackers.workers.dev/1:/Uptotel/" target="_blank" class="btn-primary">İndirin</a>
+		  </div>
+	   </div>
+	   
+	   <div class="left tiles">
+			<img src="https://nsm09.casimages.com/img/2023/03/30//23033010151026129818148122.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+			<img src="https://nsm09.casimages.com/img/2023/03/30//23033009545926129818148113.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+			<img src="https://nsm09.casimages.com/img/2023/03/30//23033009545826129818148110.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+		 
+	   </div>
+	   
+	</div>
+	<div class="section">
+	   <div id="VideoDecryptor" class="middle">
+		  <img src="https://nsm09.casimages.com/img/2023/03/29//23032904283426129818147712.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+	   </div>
+	   <div class="left title">
+		  <div class="content">
+			 <h2>VideoDecryptor</h2>
+			 <p>VIDEO ENCRYPTOR<BR>Windows üzerinden openssl ve hex editor kullanarak video dosyalarının şifrelenmesini sağlar.<BR>VIDEO DECRYPTOR<BR>Video Encryptor ile şifrelenmiş video dosyalarını oynatma aracıdır.</p><a href="https://tus.robinhackers.workers.dev/1:/Video%20En&De%20Cryptor/" target="_blank" class="btn-primary">İndirin</a>
+		  </div>
+	   </div>
+	   
+	   <div class="right tiles">
+		  <img src="https://nsm09.casimages.com/img/2023/03/30//23033003501426129818148238.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+		  <img src="https://nsm09.casimages.com/img/2023/03/30//23033003501426129818148237.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+		  <img src="https://images.unsplash.com/photo-1465326117523-6450112b60b2?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+		  <img src="https://images.unsplash.com/photo-1465326117523-6450112b60b2?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+	   </div>
+	   
+	</div>
 
-   </div>
-   
-</div>
+	<div id="test" class="section">
+	   <div id="DemLine" class="middle">
+		  <img src="https://nsm09.casimages.com/img/2023/03/29//23032910032026129818147909.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+	   </div>
+	   <div class="right title">
+		  <div class="content">
+			 <h2>DemLine Capture</h2>
+			 <p>ŞUTMEDLINE OTOMATIK DERS TARAMA ARACI<br>Dersler arasında geçiş yaparak toplu indirme işlemine yardımcı olan bir firefox eklentisidir.</p><a href="https://tus.robinhackers.workers.dev/0:/DemLine%20Capture/" target="_blank" class="btn-primary">İndirin</a>
+			 <p>- Özel -</p>
+		  </div>
+	   </div>
+	   
+	   <div class="left tiles">
+			<img src="https://nsm09.casimages.com/img/2023/03/30//23033005005826129818148341.png?dpr=2&auto=format&crop=entropy&fit=crop" />
+			<img src="https://nsm09.casimages.com/img/2023/03/30//23033004355526129818148302.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+			<img src="https://nsm09.casimages.com/img/2023/03/30//23033004355526129818148301.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+			<img src="https://nsm09.casimages.com/img/2023/03/30//23033005210626129818148361.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+	   </div>
+	   
+	</div>
+	<div class="section">
+	   <div id="DrPatPat" class="middle">
+		  <img src="https://nsm09.casimages.com/img/2023/03/29//23032909225226129818147883.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+	   </div>
+	   <div class="left title">
+		  <div class="content">
+			 <h2>DrPatPat</h2>
+			 <p>DERETAPOLOJİ OTOMATİK VİDEO İNDİRİCİ<br>Eğitim paketlerini seri biçimde indirmenizi sağlar.</p><a href="https://tus.robinhackers.workers.dev/0:/DrPatPat/" target="_blank" class="btn-primary">İndirin</a>
+			 <p>- Özel -</p>
+		  </div>
+	   </div>
+	   
+	   <div class="right tiles">
+			<img src="https://nsm09.casimages.com/img/2023/03/30//23033005512726129818148371.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+			<img src="https://nsm09.casimages.com/img/2023/03/30//23033005331426129818148363.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+			<img src="https://nsm09.casimages.com/img/2023/03/30//23033005492726129818148369.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+			<img src="https://nsm09.casimages.com/img/2023/03/30//23033005404326129818148366.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
 
-<div id="test" class="section">
-   <div id="UpToTel" class="middle">
-      <img src="https://nsm09.casimages.com/img/2023/03/29//23032904283326129818147710.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-   </div>
-   <div class="right title">
-      <div class="content">
-         <h2>UpToTel</h2>
-         <p>TELEGRAM TOPLU İÇERİK YÜKLEME ARACI<br>Telegram’a klasör olarak dosya yükleme olanağı tanır ve bir içerik dizini oluşturur.</p><a href="https://tus.robinhackers.workers.dev/1:/Uptotel/" target="_blank" class="btn-primary">İndirin</a>
-      </div>
-   </div>
-   
-   <div class="left tiles">
-      <img src="https://nsm09.casimages.com/img/2023/03/30//23033010151026129818148122.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-	  
-      <img src="https://nsm09.casimages.com/img/2023/03/30//23033009545926129818148113.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-	   <img src="https://nsm09.casimages.com/img/2023/03/30//23033009545826129818148110.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-     
-   </div>
-   
-</div>
-<div class="section">
-   <div id="VideoDecryptor" class="middle">
-      <img src="https://nsm09.casimages.com/img/2023/03/29//23032904283426129818147712.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-   </div>
-   <div class="left title">
-      <div class="content">
-         <h2>VideoDecryptor</h2>
-         <p>VIDEO ENCRYPTOR<BR>Windows üzerinden openssl ve hex editor kullanarak video dosyalarının şifrelenmesini sağlar.<BR>VIDEO DECRYPTOR<BR>Video Encryptor ile şifrelenmiş video dosyalarını oynatma aracıdır.</p><a href="https://tus.robinhackers.workers.dev/1:/Video%20En&De%20Cryptor/" target="_blank" class="btn-primary">İndirin</a>
-      </div>
-   </div>
-   
-   <div class="right tiles">
-      <img src="https://nsm09.casimages.com/img/2023/03/30//23033003501426129818148238.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-      <img src="https://nsm09.casimages.com/img/2023/03/30//23033003501426129818148237.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-      <img src="https://images.unsplash.com/photo-1465326117523-6450112b60b2?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-      <img src="https://images.unsplash.com/photo-1465326117523-6450112b60b2?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-   </div>
-   
-</div>
+	   </div>
+	   
+	</div>
+	<div class="footer">
+	   <a href="#top" class="scrollTo"><i class="fa fa-angle-up animated bounce"></i></a>
+	   <h1>Scroll Up</h1>
+	</div>
+	<center><div><a href="mailto:robintus@mail.com" style="color:gray" >Contact<a></div></center>
 
-<div id="test" class="section">
-   <div id="DemLine" class="middle">
-      <img src="https://nsm09.casimages.com/img/2023/03/29//23032910032026129818147909.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-   </div>
-   <div class="right title">
-      <div class="content">
-         <h2>DemLine Capture</h2>
-         <p>ŞUTMEDLINE OTOMATIK DERS TARAMA ARACI<br>Dersler arasında geçiş yaparak toplu indirme işlemine yardımcı olan bir firefox eklentisidir.</p><a href="https://tus.robinhackers.workers.dev/0:/DemLine%20Capture/" target="_blank" class="btn-primary">İndirin</a>
-		 <p>- Özel -</p>
-      </div>
-   </div>
-   
-   <div class="left tiles">
-            <img src="https://nsm09.casimages.com/img/2023/03/30//23033005005826129818148341.png?dpr=2&auto=format&crop=entropy&fit=crop" />
-	  <img src="https://nsm09.casimages.com/img/2023/03/30//23033004355526129818148302.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-		<img src="https://nsm09.casimages.com/img/2023/03/30//23033004355526129818148301.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-<img src="https://nsm09.casimages.com/img/2023/03/30//23033005210626129818148361.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-   </div>
-   
-</div>
-<div class="section">
-   <div id="DrPatPat" class="middle">
-      <img src="https://nsm09.casimages.com/img/2023/03/29//23032909225226129818147883.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-   </div>
-   <div class="left title">
-      <div class="content">
-         <h2>DrPatPat</h2>
-         <p>DERETAPOLOJİ OTOMATİK VİDEO İNDİRİCİ<br>Eğitim paketlerini seri biçimde indirmenizi sağlar.</p><a href="https://tus.robinhackers.workers.dev/0:/DrPatPat/" target="_blank" class="btn-primary">İndirin</a>
-		 <p>- Özel -</p>
-      </div>
-   </div>
-   
-   <div class="right tiles">
-      <img src="https://nsm09.casimages.com/img/2023/03/30//23033005512726129818148371.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-      <img src="https://nsm09.casimages.com/img/2023/03/30//23033005331426129818148363.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-	  <img src="https://nsm09.casimages.com/img/2023/03/30//23033005492726129818148369.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-<img src="https://nsm09.casimages.com/img/2023/03/30//23033005404326129818148366.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-
-   </div>
-   
-</div>
-<div class="footer">
-   <a href="#top" class="scrollTo"><i class="fa fa-angle-up animated bounce"></i></a>
-   <h1>Scroll Up</h1>
-</div>
-<center><div><a href="mailto:robintus@mail.com">Contact<a></div></center>
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
 
-    <script>
-$(document).ready(function(){
+<script>
+	$(document).ready(function(){
 
-   var $sm = 480;
-   var $md = 768;
+	   var $sm = 480;
+	   var $md = 768;
 
-   function resizeThis() {
-      $imgH = $('.middle img').width();
-      if ($(window).width() >= $sm) {
-         $('.left,.right,.section').css('height', $imgH);
-      } else {
-         $('.left,.right,.section').css('height', 'auto');
-      }
-   }
+	   function resizeThis() {
+		  $imgH = $('.middle img').width();
+		  if ($(window).width() >= $sm) {
+			 $('.left,.right,.section').css('height', $imgH);
+		  } else {
+			 $('.left,.right,.section').css('height', 'auto');
+		  }
+	   }
 
-   resizeThis();
+	   resizeThis();
 
-   $(window).resize(function(){
-      resizeThis();
-   });
+	   $(window).resize(function(){
+		  resizeThis();
+	   });
 
-   $(window).scroll(function() {
-      $('.section').each(function(){
-         var $elementPos = $(this).offset().top;
-         var $scrollPos = $(window).scrollTop();
+	   $(window).scroll(function() {
+		  $('.section').each(function(){
+			 var $elementPos = $(this).offset().top;
+			 var $scrollPos = $(window).scrollTop();
 
-         var $sectionH = $(this).height();
-         var $h = $(window).height();
-         var $sectionVert = (($h/2)-($sectionH/4));
+			 var $sectionH = $(this).height();
+			 var $h = $(window).height();
+			 var $sectionVert = (($h/2)-($sectionH/4));
 
 
-         if (($elementPos - $sectionVert) <= $scrollPos && ($elementPos - $sectionVert) + $sectionH > $scrollPos) {
-            $(this).addClass('animate');
-         } else {
-            $(this).removeClass('animate');
-         }
-      });
-   });
+			 if (($elementPos - $sectionVert) <= $scrollPos && ($elementPos - $sectionVert) + $sectionH > $scrollPos) {
+				$(this).addClass('animate');
+			 } else {
+				$(this).removeClass('animate');
+			 }
+		  });
+	   });
 
-   $('.btn-primary').click(function(){
-      //alert('I lied');
-   });
-});
+	   $('.btn-primary').click(function(){
+		  //alert('I lied');
+	   });
+	});
 
-$(function() {
-  $('a[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
-      }
-    }
-  });
-});
+	$(function() {
+	  $('a[href*="#"]:not([href="#"])').click(function() {
+		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		  var target = $(this.hash);
+		  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		  if (target.length) {
+			$('html, body').animate({
+			  scrollTop: target.offset().top
+			}, 1000);
+			return false;
+		  }
+		}
+	  });
+	});
 </script>
+
 </body>
 </html>
