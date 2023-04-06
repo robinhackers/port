@@ -12,9 +12,19 @@
 	
 	body {
 		background-color: black;
-		font-family: 'Roboto', sans-serif;
-       
+		font-family: 'Roboto', sans-serif;     
 	}
+    a:link {
+        color: pink;
+        text-decoration: none; 
+    }a:visited {
+        color: pink;
+        text-decoration: none; 
+    }a:hover {
+        color: white;
+        text-decoration: none; 
+    }
+
 	.container {
 		margin: 0;
 		display: flex;
@@ -31,19 +41,21 @@
 		height: 52%;
 	}
 	  .containerbackground {
+
 		font-family: Dosis;
 		position: absolute;
 		font-size: 24vw;
 		z-index: -1;
 		color: red;
 		opacity: 0.07;
-		background-image:url('https://nsm09.casimages.com/img/2023/04/02//23040209210326129818150404.png');
-		height: 100%;
-		width: 100%;
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-size: 100%;
-		background-origin: content-box;
+        background-image:url('https://nsm09.casimages.com/img/2023/04/02//23040209210326129818150404.png');
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-origin: content-box;
+        
 	}
 	.square {
 		opacity: 0.5 ;
@@ -311,6 +323,29 @@
 		}else{setTimeout(rhack, 300, arrtext[i],i);if (document.getElementsByTagName("a")[0].innerText=='< ROBIN >'){return}}
 
 	}
+    function pname(doit) {
+        document.getElementsByTagName('h1')[0].innerText = doit;
+    }
+    var isOpened = false;
+    function videoshow(videoname, downname, addvideoname=""){
+
+        if (!isOpened) {
+            $("#"+videoname).fadeIn(500);
+            if (addvideoname!=""){ $("#"+addvideoname).fadeIn(500)}
+             document.getElementById(downname).innerText = "Tanıtım Ön İzleniyor";
+             document.getElementById(downname).style.setProperty("background","#708090","important");
+             
+        } else {
+            $("#"+videoname).fadeOut(500);
+            if (addvideoname!=""){ $("#"+addvideoname).fadeOut(500)}
+             document.getElementById(downname).innerText = "İndirin";
+             document.getElementById(downname).style.setProperty("background","","");
+        }
+        isOpened = !isOpened;
+        
+    }
+
+
 	</script>
 </head>
 <body>
@@ -325,7 +360,7 @@
 
         <div id=2 class="square" style="grid-row: 2; grid-column: 1;" onmouseover="pname('AutoData')" onmouseout="pname('RobinHackers Windows Apps')"><a href="#AutoData"><img src="https://nsm09.casimages.com/img/2023/03/27//23032710430926129818146438.png" style=" width: 100%; height: 100%; transform: scale(1.1);background-size: cover; background-position: center;"></a></div>
 
-        <div id=3 class="square" style="grid-row: 3; grid-column: 1;" onmouseover="pname('DemLine Capture')" onmouseout="pname('RobinHackers Windows Apps')"><a href="#DemLine"><img src="https://nsm09.casimages.com/img/2023/03/29//23032910032026129818147909.png" style=" width: 100%; height: 100%; transform: scale(1.1);background-size: cover; background-position: center;"></a></div>
+        <div id=3 class="square" style="grid-row: 3; grid-column: 1;" onmouseover="pname('DemLine Capture')" onmouseout="pname('RobinHackers Windows Apps')"><a href="#DemLine"><img src="https://nsm09.casimages.com/img/2023/04/06//23040608252726129818153806.png" style=" width: 100%; height: 100%; transform: scale(1.1);background-size: cover; background-position: center;"></a></div>
 	
         <div id=4 class="square" style="grid-row: 2; grid-column: 2;" onmouseover="pname('Worldown')" onmouseout="pname('RobinHackers Windows Apps')"><a href="#Worldown"><img src="https://nsm09.casimages.com/img/2023/03/28//23032805131126129818147002.png" style=" width: 100%; height: 100%; transform: scale(1.1);background-size: cover; background-position: center;"></a></div>
 
@@ -333,12 +368,12 @@
 	
         <div id=6 class="square" style="grid-row: 2; grid-column: 3;" onmouseover="pname('Kacakademi')" onmouseout="pname('RobinHackers Windows Apps')"><a href="#Kacakademi"><img src="https://nsm09.casimages.com/img/2023/03/29//23032905195026129818147755.png" style=" width: 100%; height: 100%; transform: scale(1.1);background-size: cover; background-position: center;"></a></div>
 	
-        <div id=7 class="square" style="grid-row: 3; grid-column: 3;" onmouseover="pname('DrPatPat')" onmouseout="pname('RobinHackers Windows Apps')"><a href="#DrPatPat"><img src="https://nsm09.casimages.com/img/2023/03/29//23032909225226129818147883.png" style=" width: 100%; height: 100%; transform: scale(1.1);background-size: cover; background-position: center;"></a></div>
+        <div id=7 class="square" style="grid-row: 3; grid-column: 3;" onmouseover="pname('DrPatPat')" onmouseout="pname('RobinHackers Windows Apps')"><a href="#DrPatPat"><img src="https://nsm09.casimages.com/img/2023/04/06//23040608093926129818153803.png" style=" width: 100%; height: 100%; transform: scale(1.1);background-size: cover; background-position: center;"></a></div>
 		
     </div>
 	<div class="Title">
 		<div class="header" id="top">
-			<h1>RobinHackers Windows Apps</h1>
+			<h1 id="f">RobinHackers Windows Apps</h1>
 			<i class="fa fa-angle-down animated bounce"></i>
 		</div>
 	</div>
@@ -349,7 +384,7 @@
 		<div class="left title">
 			<div class="content">
 				<h2>AutoData</h2>
-				<p>ŞUTDATA OTOMATİK VİDEO İNDİRME ARACI<br>Şutdata Online Eğitim belgelerini hızlı, güvenli ve tasnifli bir biçimde indirmenizi sağlar.</p>
+				<p><a href="https://tinyurl.com/ycxab9xb" target="_blank" >SUTDATA</a> OTOMATİK VİDEO İNDİRME ARACI<br>Sutdata Online Eğitim belgelerini hızlı, güvenli ve tasnifli bir biçimde indirmenizi sağlar.</p>
 				<a href="https://tus.robinhackers.workers.dev/0:/AutoData/" target="_blank" class="btn-primary">İndirin</a>
 				<p>- Özel -</p>
 			</div>
@@ -364,12 +399,16 @@
 
 	<div class="section">
 		<div id="Worldown" class="middle">
-			<img src="https://nsm09.casimages.com/img/2023/03/28//23032805131126129818147002.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+            <div class="box">
+                <video controls id="worldvideo" style="display:none" src="https://tus.robinhackers.workers.dev/0:/Worldown/Worldown.mp4" width = "100%" height = "100%">
+                </video>
+                <img src="https://nsm09.casimages.com/img/2023/03/28//23032805131126129818147002.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+    		</div>           
 		</div>
 		<div class="right title">
 			<div class="content">
 				 <h2>Worldown</h2>
-				 <p>ŞUTWORLD ŞUTTIME ŞUTMER DOKÜMAN İNDİRİCİ<br>Tüm içerikleri hızlı ve tasnifli biçimde indirmenizi sağlar.</p> <a href="https://tus.robinhackers.workers.dev/0:/Worldown/" target="_blank" class="btn-primary">İndirin</a>
+				 <p><a href="https://tinyurl.com/ybutbwsx" target="_blank" >SUTWORLD</a> <a href="https://tinyurl.com/yvw7wz58" target="_blank" >SUTTIME</a> <a href="https://tinyurl.com/3p64bef3" target="_blank" >SUTMER</a> DOKÜMAN İNDİRİCİ<br>Tüm içerikleri hızlı ve tasnifli biçimde indirmenizi sağlar.</p> <a href="https://tus.robinhackers.workers.dev/0:/Worldown/" target="_blank" class="btn-primary"  id="worldindir" onmouseover="videoshow('worldvideo','worldindir')">İndirin</a>
 				 <p>- Özel -</p>
 		    </div>
 	    </div>
@@ -382,12 +421,17 @@
 
 	<div class="section">
 	   <div id="Kacakademi" class="middle">
-		  <img src="https://nsm09.casimages.com/img/2023/03/29//23032905195026129818147755.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+		  
+          <div class="box">
+            <video controls  id="kacakvideo" style="display:none" src="https://tus.robinhackers.workers.dev/0:/Kacakademi/Kacakademi%20Anlat%C4%B1m.mp4" width = "100%" height = "100%">
+             </video>
+             <img src="https://nsm09.casimages.com/img/2023/03/29//23032905195026129818147755.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+          </div> 
 	   </div>
 	   <div class="left title">
 		  <div class="content">
 			 <h2>Kacakademi</h2>
-			 <p>PITAKADEMİSİ, ŞUTEV VİDEO DRM ÇÖZÜCÜ VE İNDİRİCİ<br>Online Eğitim paketlerini seri, tasnifli ve güvenli biçimde indirmenizi sağlar.</p><a href="https://tus.robinhackers.workers.dev/0:/Kacakademi/" target="_blank" class="btn-primary">İndirin</a>
+			 <p><a href="https://tinyurl.com/ac92n365" target="_blank" >PITAKADEMİSİ</a> <a href="https://tinyurl.com/2p9bmc4p" target="_blank" >SUTEV</a> VİDEO DRM ÇÖZÜCÜ VE İNDİRİCİ<br>Online Eğitim paketlerini seri, tasnifli ve güvenli biçimde indirmenizi sağlar.</p><a id="kacakindir" href="https://tus.robinhackers.workers.dev/0:/Kacakademi/" target="_blank" class="btn-primary" onmouseover="videoshow('kacakvideo','kacakindir')" >İndirin</a>
 			 <p>- Özel -</p>
 		  </div>
 	   </div>
@@ -395,18 +439,24 @@
 	   <div class="right tiles">
 		  <img src="https://nsm09.casimages.com/img/2023/03/30//23033008451626129818148054.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
 		  <img src="https://nsm09.casimages.com/img/2023/03/30//23033008451626129818148057.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+          <img src="https://nsm09.casimages.com/img/2023/04/06//23040604053526129818153480.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+		  <img src="https://nsm09.casimages.com/img/2023/04/06//23040604053526129818153480.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
 	   </div>
   
 	</div>
 
 	<div id="test" class="section">
 	   <div id="UpToTel" class="middle">
+         <div class="box">
+            <video controls  id="uptotelvideo" style="display:none" src="https://tus.robinhackers.workers.dev/1:/Uptotel/Telegram%20Toplu%20Klas%C3%B6r%20Y%C3%BCklemesi%20-%20Uptotel.mp4" width = "100%" height = "100%">
+             </video>
 		  <img src="https://nsm09.casimages.com/img/2023/03/29//23032904283326129818147710.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+       	   </div>
 	   </div>
 	   <div class="right title">
 		  <div class="content">
 			 <h2>UpToTel</h2>
-			 <p>TELEGRAM TOPLU İÇERİK YÜKLEME ARACI<br>Telegram’a klasör olarak dosya yükleme olanağı tanır ve bir içerik dizini oluşturur.</p><a href="https://tus.robinhackers.workers.dev/1:/Uptotel/" target="_blank" class="btn-primary">İndirin</a>
+			 <p>TELEGRAM TOPLU İÇERİK YÜKLEME ARACI<br>Telegram’a klasör olarak dosya yükleme olanağı tanır ve bir içerik dizini oluşturur.</p><a href="https://tus.robinhackers.workers.dev/1:/Uptotel/" target="_blank" class="btn-primary" id="uptotelindir" onmouseover="videoshow('uptotelvideo','uptotelindir')">İndirin</a>
 		  </div>
 	   </div>
 	   
@@ -420,32 +470,42 @@
 	</div>
 	<div class="section">
 	   <div id="VideoDecryptor" class="middle">
-		  <img src="https://nsm09.casimages.com/img/2023/03/29//23032904283426129818147712.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-	   </div>
+            <div class="box">
+            <video id="cryptorvideo1" controls  style="display:none;flex:1" src="https://tus.robinhackers.workers.dev/1:/Video%20En&De%20Cryptor/Video%20Encryptor/Video%20%C5%9Eifrelemesi%20-%20VideoEncryptor.mp4" width = "90%" height = "50%">
+             </video>
+             <video id="cryptorvideo2" controls  style="display:none;flex:2" src="https://tus.robinhackers.workers.dev/1:/Video%20En&De%20Cryptor/Video%20Decryptor/Korumal%C4%B1%20Videolar%C4%B1n%20Oynat%C4%B1lmas%C4%B1%20-%20VideoDecryptor.mp4" width = "90%" height = "50%">
+             </video>
+            <img src="https://nsm09.casimages.com/img/2023/03/29//23032904283426129818147712.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+             </div>
+       </div>
 	   <div class="left title">
 		  <div class="content">
 			 <h2>VideoDecryptor</h2>
-			 <p>VIDEO ENCRYPTOR<BR>Windows üzerinden openssl ve hex editor kullanarak video dosyalarının şifrelenmesini sağlar.<BR>VIDEO DECRYPTOR<BR>Video Encryptor ile şifrelenmiş video dosyalarını oynatma aracıdır.</p><a href="https://tus.robinhackers.workers.dev/1:/Video%20En&De%20Cryptor/" target="_blank" class="btn-primary">İndirin</a>
+			 <p>VIDEO ENCRYPTOR<BR>Windows üzerinden openssl ve hex editor kullanarak video dosyalarının şifrelenmesini sağlar.<BR>VIDEO DECRYPTOR<BR>Video Encryptor ile şifrelenmiş video dosyalarını oynatma aracıdır.</p><a href="https://tus.robinhackers.workers.dev/1:/Video%20En&De%20Cryptor/" target="_blank" class="btn-primary"  id="cryptorindir" onmouseover="videoshow('cryptorvideo1','cryptorindir', 'cryptorvideo2')" >İndirin</a>
 		  </div>
 	   </div>
 	   
 	   <div class="right tiles">
 		  <img src="https://nsm09.casimages.com/img/2023/03/30//23033003501426129818148238.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
 		  <img src="https://nsm09.casimages.com/img/2023/03/30//23033003501426129818148237.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-		  <img src="https://images.unsplash.com/photo-1465326117523-6450112b60b2?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-		  <img src="https://images.unsplash.com/photo-1465326117523-6450112b60b2?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+		  <img src="https://nsm09.casimages.com/img/2023/04/06//23040604053526129818153480.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+		  <img src="https://nsm09.casimages.com/img/2023/04/06//23040604053526129818153480.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
 	   </div>
 	   
 	</div>
 
 	<div id="test" class="section">
 	   <div id="DemLine" class="middle">
-		  <img src="https://nsm09.casimages.com/img/2023/03/29//23032910032026129818147909.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+            <div class="box">
+                <video controls  id="demvideo" style="display:none" src="https://tus.robinhackers.workers.dev/0:/DemLine%20Capture/Tusmedline%20Demline%20Otomatik%20Toplu%20%C4%B0ndirme%20Anlat%C4%B1m%C4%B1.mp4" width = "100%" height = "100%">
+                 </video>
+                <img src="https://nsm09.casimages.com/img/2023/04/06//23040608252726129818153806.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+    	   </div>
 	   </div>
 	   <div class="right title">
 		  <div class="content">
 			 <h2>DemLine Capture</h2>
-			 <p>ŞUTMEDLINE OTOMATIK DERS TARAMA ARACI<br>Dersler arasında geçiş yaparak toplu indirme işlemine yardımcı olan bir firefox eklentisidir.</p><a href="https://tus.robinhackers.workers.dev/0:/DemLine%20Capture/" target="_blank" class="btn-primary">İndirin</a>
+			 <p><a href="https://tinyurl.com/dfkkwmsy" target="_blank" >SUTMEDLINE</a> OTOMATIK DERS TARAMA ARACI<br>Dersler arasında geçiş yaparak toplu indirme işlemine yardımcı olan bir firefox eklentisidir.</p><a href="https://tus.robinhackers.workers.dev/0:/DemLine%20Capture/" target="_blank" class="btn-primary" id="demindir" onmouseover="videoshow('demvideo','demindir')">İndirin</a>
 			 <p>- Özel -</p>
 		  </div>
 	   </div>
@@ -459,13 +519,17 @@
 	   
 	</div>
 	<div class="section">
-	   <div id="DrPatPat" class="middle">
-		  <img src="https://nsm09.casimages.com/img/2023/03/29//23032909225226129818147883.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
-	   </div>
-	   <div class="left title">
+	    <div id="DrPatPat" class="middle">
+            <div class="box">
+                <video controls  id="drpatvideo" style="display:none" src="https://tus.robinhackers.workers.dev/0:/DrPatPat/DrPatPat.mp4" width = "100%" height = "100%">
+                 </video>
+                <img src="https://nsm09.casimages.com/img/2023/04/06//23040608093926129818153803.png?dpr=2&auto=format&crop=entropy&fit=crop&w=250&h=250&q=80" />
+    	    </div>
+	    </div>
+	    <div class="left title">
 		  <div class="content">
 			 <h2>DrPatPat</h2>
-			 <p>DERETAPOLOJİ OTOMATİK VİDEO İNDİRİCİ<br>Eğitim paketlerini seri biçimde indirmenizi sağlar.</p><a href="https://tus.robinhackers.workers.dev/0:/DrPatPat/" target="_blank" class="btn-primary">İndirin</a>
+			 <p><a href="https://tinyurl.com/ynec896h" target="_blank" >DERETAPOLOJİ</a> OTOMATİK VİDEO İNDİRİCİ<br>Eğitim paketlerini seri biçimde indirmenizi sağlar.</p><a href="https://tus.robinhackers.workers.dev/0:/DrPatPat/" target="_blank" class="btn-primary" id="drpatindir" onmouseover="videoshow('drpatvideo','drpatindir')">İndirin</a>
 			 <p>- Özel -</p>
 		  </div>
 	   </div>
@@ -545,6 +609,33 @@
 		}
 	  });
 	});
+    
+  var str="";  
+  document.querySelectorAll('a[href]').forEach(function (el) {
+    el.addEventListener('mouseover', function () {
+		
+        str = this.textContent;
+
+        if (str !== "" && str !== "İndirin" && str !== "Tanıtım Ön İzleniyor") {
+            if (str.includes("DERE")){
+            var newStr = "DRPAT"+ str.slice(7);
+            }else{
+                var newStr = str[2] + str.slice(1, 2) + str[0] + str.slice(3);
+            }
+            this.textContent = newStr;
+        } else {
+            var newStr = str;
+        }
+    });
+    
+    el.addEventListener('mouseout', function () {
+
+        if (str !== "" && str !== "İndirin"  && str !== "Tanıtım Ön İzleniyor") {
+            this.textContent = str;
+        }
+    });
+});
+
 </script>
 
 </body>
